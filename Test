@@ -1,0 +1,76 @@
+/*
+    Cao Đăng Quyền - 2280602676
+ */
+package Bai1;
+
+import java.util.Scanner;
+
+abstract public class NV {
+    private String manv,tennv,trinhdo;
+    protected long luongcb;
+
+    public NV() {
+    }
+
+    public NV(String manv, String tennv, String trinhdo, long luongcb) {
+        this.manv = manv;
+        this.tennv = tennv;
+        this.trinhdo = trinhdo;
+        this.luongcb = luongcb;
+    }
+    public NV(NV obj) {
+        this.manv = obj.manv;
+        this.tennv = obj.tennv;
+        this.trinhdo = obj.trinhdo;
+        this.luongcb = obj.luongcb;
+    }
+
+    public String getManv() {
+        return manv;
+    }
+
+    public void setManv(String manv) {
+        this.manv = manv;
+    }
+
+    public String getTennv() {
+        return tennv;
+    }
+
+    public void setTennv(String tennv) {
+        this.tennv = tennv;
+    }
+
+    public String getTrinhdo() {
+        return trinhdo;
+    }
+
+    public void setTrinhdo(String trinhdo) {
+        this.trinhdo = trinhdo;
+    }
+
+    public long getLuongcb() {
+        return luongcb;
+    }
+
+    public void setLuongcb(long luongcb) {
+        this.luongcb = luongcb;
+    }
+    
+    public void Nhap(){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Nhap ma nv: ");
+        manv=sc.nextLine();
+        System.out.print("Nhap ten nv: ");
+        tennv=sc.nextLine();
+        System.out.print("Nhap trinh do: ");
+        trinhdo=sc.nextLine();
+        System.out.print("Nhap luong cb: ");
+        luongcb=sc.nextLong();
+    }
+
+    public void Xuat() {
+        System.out.format("| %10s | %20s | %10s | %10s |",manv,tennv,trinhdo,luongcb);
+    }
+    abstract public long TinhLuong();
+}
